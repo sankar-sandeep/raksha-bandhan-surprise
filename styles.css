@@ -1,0 +1,2416 @@
+/* =========================================================
+   RAKSHA BANDHAN WEBSITE
+   COMPLETE RESPONSIVE STYLES
+   Desktop + Android + iPhone
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    font-family: "Poppins", sans-serif;
+
+    background: #fff7fb;
+
+    color: #542a48;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================================================
+   FLOATING BACKGROUND ELEMENTS
+========================================================= */
+
+.floating-elements {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.floating-elements span {
+    position: absolute;
+
+    bottom: -60px;
+
+    font-size: 24px;
+
+    opacity: 0.45;
+
+    animation:
+        floatUp
+        12s
+        linear
+        infinite;
+}
+
+.floating-elements span:nth-child(1) {
+    left: 5%;
+    animation-duration: 12s;
+}
+
+.floating-elements span:nth-child(2) {
+    left: 18%;
+    animation-duration: 15s;
+    animation-delay: 2s;
+}
+
+.floating-elements span:nth-child(3) {
+    left: 31%;
+    animation-duration: 13s;
+    animation-delay: 4s;
+}
+
+.floating-elements span:nth-child(4) {
+    left: 45%;
+    animation-duration: 17s;
+    animation-delay: 1s;
+}
+
+.floating-elements span:nth-child(5) {
+    left: 58%;
+    animation-duration: 14s;
+    animation-delay: 3s;
+}
+
+.floating-elements span:nth-child(6) {
+    left: 72%;
+    animation-duration: 18s;
+    animation-delay: 5s;
+}
+
+.floating-elements span:nth-child(7) {
+    left: 84%;
+    animation-duration: 13s;
+    animation-delay: 2s;
+}
+
+.floating-elements span:nth-child(8) {
+    left: 94%;
+    animation-duration: 16s;
+    animation-delay: 6s;
+}
+
+@keyframes floatUp {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.45;
+    }
+
+    80% {
+        opacity: 0.45;
+    }
+
+    100% {
+        transform:
+            translateY(-120vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding:
+        28px clamp(20px, 7vw, 110px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    z-index: 20;
+
+    color: white;
+}
+
+.logo {
+    font-size:
+        clamp(15px, 1.5vw, 20px);
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+.nav-rakhi {
+    font-size: 26px;
+
+    animation:
+        gentleRotate
+        4s
+        ease-in-out
+        infinite;
+}
+
+@keyframes gentleRotate {
+
+    0%,
+    100% {
+        transform:
+            rotate(-8deg);
+    }
+
+    50% {
+        transform:
+            rotate(8deg);
+    }
+}
+
+
+/* =========================================================
+   FIRST PAGE — HERO
+========================================================= */
+
+.hero {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    min-height: 100svh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding:
+        110px 20px 60px;
+
+    color: white;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255,255,255,0.22),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(255,255,255,0.16),
+            transparent 28%
+        ),
+
+        linear-gradient(
+            135deg,
+            #ff7095 0%,
+            #e85d9d 48%,
+            #8f73d8 100%
+        );
+}
+
+
+/* Large background circle */
+
+.hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width:
+        min(520px, 55vw);
+
+    height:
+        min(520px, 55vw);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    top: -220px;
+
+    right: -150px;
+}
+
+
+/* Small background circle */
+
+.hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    width:
+        min(380px, 45vw);
+
+    height:
+        min(380px, 45vw);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.07);
+
+    bottom: -180px;
+
+    left: -100px;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: 100%;
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    animation:
+        heroAppear
+        1s
+        ease;
+}
+
+@keyframes heroAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   TOP DECORATION
+========================================================= */
+
+.top-decoration {
+
+    margin-bottom: 24px;
+
+    font-size:
+        clamp(13px, 1.5vw, 18px);
+
+    letter-spacing: 6px;
+
+    opacity: 0.95;
+}
+
+
+/* =========================================================
+   SMALL HEADING
+========================================================= */
+
+.small-heading {
+
+    margin-bottom: 18px;
+
+    font-size:
+        clamp(10px, 1.2vw, 14px);
+
+    font-weight: 600;
+
+    letter-spacing: 4px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+.hero h1 {
+
+    margin: 0;
+
+    font-family:
+        "DM Serif Display",
+        serif;
+
+    font-size:
+        clamp(60px, 9vw, 105px);
+
+    font-weight: 400;
+
+    line-height: 0.95;
+
+    text-shadow:
+        0 8px 30px
+        rgba(70,10,50,0.18);
+}
+
+.hero h1 span {
+
+    display: block;
+
+    margin-top: 12px;
+
+    font-style: italic;
+
+    color: white;
+}
+
+
+/* =========================================================
+   RAKHI
+========================================================= */
+
+.rakhi-icon {
+
+    width:
+        clamp(210px, 24vw, 320px);
+
+    height:
+        clamp(170px, 19vw, 240px);
+
+    margin:
+        22px auto 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    animation:
+        rakhiFloat
+        4s
+        ease-in-out
+        infinite;
+}
+
+.rakhi-icon img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 15px 22px
+            rgba(60,15,50,0.28)
+        );
+
+    transition:
+        transform 0.4s ease;
+}
+
+.rakhi-icon img:hover {
+
+    transform:
+        scale(1.06)
+        rotate(-2deg);
+}
+
+@keyframes rakhiFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-8px);
+    }
+}
+
+
+/* =========================================================
+   SISTER TITLE
+========================================================= */
+
+.hero h2 {
+
+    margin:
+        8px auto 18px;
+
+    font-family:
+        "DM Serif Display",
+        serif;
+
+    font-size:
+        clamp(28px, 4vw, 46px);
+
+    font-weight: 400;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.hero-description {
+
+    width:
+        min(700px, 100%);
+
+    margin:
+        0 auto;
+
+    font-size:
+        clamp(13px, 1.5vw, 17px);
+
+    line-height: 1.8;
+
+    color:
+        rgba(255,255,255,0.94);
+}
+
+.special-line {
+
+    margin-top: 22px;
+}
+
+
+/* =========================================================
+   SURPRISE BUTTON
+========================================================= */
+
+.surprise-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    min-height: 56px;
+
+    margin-top: 28px;
+
+    padding:
+        15px 30px;
+
+    border-radius: 100px;
+
+    background: white;
+
+    color: #d44f8c;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 14px 35px
+        rgba(0,0,0,0.20);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.surprise-button:hover {
+
+    transform:
+        translateY(-5px)
+        scale(1.03);
+
+    box-shadow:
+        0 20px 45px
+        rgba(0,0,0,0.25);
+}
+
+.surprise-button:active {
+
+    transform:
+        scale(0.96);
+}
+
+.surprise-button span {
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   SECOND PAGE
+========================================================= */
+
+.surprise-section {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    padding:
+        130px 20px 80px;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 10%,
+            #ffe3f0,
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 90% 30%,
+            #eadfff,
+            transparent 25%
+        ),
+
+        #fff8fc;
+}
+
+.section-container {
+
+    position: relative;
+
+    z-index: 3;
+
+    max-width: 1150px;
+
+    margin: auto;
+}
+
+
+/* =========================================================
+   SECOND PAGE HEADINGS
+========================================================= */
+
+.section-heading {
+
+    text-align: center;
+
+    margin-bottom: 55px;
+}
+
+.section-label {
+
+    color: #d04b86;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+.section-heading h1,
+.section-heading h2 {
+
+    font-family:
+        "DM Serif Display",
+        serif;
+
+    font-size:
+        clamp(42px, 6vw, 68px);
+
+    line-height: 1.05;
+
+    font-weight: 400;
+
+    color: #542a48;
+}
+
+.section-heading h1 span,
+.section-heading h2 span {
+
+    display: block;
+
+    color: #d04b86;
+
+    font-style: italic;
+}
+
+.heading-line {
+
+    margin-top: 18px;
+
+    color: #dc6d9d;
+
+    font-size: 22px;
+}
+
+.section-description {
+
+    max-width: 650px;
+
+    margin:
+        18px auto 0;
+
+    color: #806275;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   LETTER CARD
+========================================================= */
+
+.letter-card {
+
+    position: relative;
+
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    padding:
+        65px 75px;
+
+    background:
+        rgba(255,255,255,0.92);
+
+    border:
+        1px solid
+        rgba(220,120,170,0.18);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(125,61,110,0.12);
+
+    overflow: hidden;
+}
+
+.letter-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 10px;
+
+    border:
+        1px dashed
+        rgba(211,102,153,0.25);
+
+    border-radius: 22px;
+
+    pointer-events: none;
+}
+
+.letter-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-family:
+        "DM Serif Display",
+        serif;
+
+    font-size: 21px;
+
+    line-height: 2;
+
+    text-align: center;
+
+    color: #5c3552;
+}
+
+.letter-content p {
+
+    margin-bottom: 22px;
+}
+
+.special-message {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    margin:
+        30px 0;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    color: #d04b86;
+}
+
+.special-message span {
+
+    animation:
+        heartBeat
+        1.5s
+        infinite;
+}
+
+@keyframes heartBeat {
+
+    0%,
+    100% {
+        transform:
+            scale(1);
+    }
+
+    25% {
+        transform:
+            scale(1.2);
+    }
+
+    50% {
+        transform:
+            scale(1);
+    }
+
+    75% {
+        transform:
+            scale(1.15);
+    }
+}
+
+.letter-ending {
+
+    color: #d04b86;
+}
+
+
+/* =========================================================
+   LETTER DECORATIONS
+========================================================= */
+
+.letter-decoration {
+
+    position: absolute;
+
+    font-size: 32px;
+
+    opacity: 0.7;
+
+    z-index: 3;
+}
+
+.top-left {
+    top: 25px;
+    left: 30px;
+}
+
+.top-right {
+    top: 25px;
+    right: 30px;
+}
+
+.bottom-left {
+    bottom: 20px;
+    left: 30px;
+}
+
+.bottom-right {
+    bottom: 20px;
+    right: 30px;
+}
+
+
+/* =========================================================
+   OUR BOND
+========================================================= */
+
+.bond-section {
+
+    margin-top: 120px;
+}
+
+.bond-cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.bond-card {
+
+    background: white;
+
+    padding:
+        35px 25px;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    box-shadow:
+        0 15px 40px
+        rgba(100,40,90,0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.bond-card:hover {
+
+    transform:
+        translateY(-10px);
+
+    box-shadow:
+        0 25px 50px
+        rgba(100,40,90,0.15);
+}
+
+.bond-icon {
+
+    width: 75px;
+
+    height: 75px;
+
+    margin:
+        0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe0ec,
+            #eee2ff
+        );
+
+    font-size: 34px;
+}
+
+.bond-card h3 {
+
+    font-family:
+        "DM Serif Display",
+        serif;
+
+    font-size: 26px;
+
+    color: #542a48;
+
+    margin-bottom: 12px;
+}
+
+.bond-card p {
+
+    color: #806275;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   MEMORIES
+========================================================= */
+
+.memory-section {
+
+    margin-top: 120px;
+}
+
+.memory-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+.memory-photo {
+
+    background: white;
+
+    padding:
+        12px 12px 25px;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 15px 35px
+        rgba(80,30,70,0.15);
+
+    transform:
+        rotate(-2deg);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+
+    cursor: pointer;
+}
+
+.memory-photo:nth-child(2) {
+
+    transform:
+        rotate(2deg);
+}
+
+.memory-photo:nth-child(3) {
+
+    transform:
+        rotate(-1deg);
+}
+
+.memory-photo:hover {
+
+    transform:
+        translateY(-12px)
+        rotate(0deg)
+        scale(1.03);
+
+    box-shadow:
+        0 25px 50px
+        rgba(80,30,70,0.22);
+}
+
+.photo-frame {
+
+    width: 100%;
+
+    height: 330px;
+
+    overflow: hidden;
+
+    border-radius: 5px;
+
+    background: #f5e8ef;
+}
+
+.photo-frame img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.6s ease;
+}
+
+.memory-photo:hover
+.photo-frame img {
+
+    transform:
+        scale(1.08);
+}
+
+.photo-caption {
+
+    text-align: center;
+
+    padding-top: 18px;
+}
+
+.photo-caption span {
+
+    font-size: 20px;
+}
+
+.photo-caption h3 {
+
+    font-family:
+        "DM Serif Display",
+        serif;
+
+    font-size: 25px;
+
+    color: #542a48;
+
+    margin: 5px 0;
+}
+
+.photo-caption p {
+
+    color: #927287;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   PROMISE SECTION
+========================================================= */
+
+.promise-section {
+
+    margin-top: 120px;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+.promise-card {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 850px;
+
+    padding:
+        60px 40px;
+
+    text-align: center;
+
+    border-radius: 35px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e65b91,
+            #9a75d7
+        );
+
+    box-shadow:
+        0 25px 70px
+        rgba(150,65,125,0.22);
+
+    overflow: hidden;
+}
+
+.promise-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+
+    height: 300px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    top: -150px;
+
+    right: -100px;
+}
+
+.promise-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+
+    height: 250px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    bottom: -130px;
+
+    left: -80px;
+}
+
+
+/* =========================================================
+   PROMISE RAKHI
+========================================================= */
+
+.promise-rakhi {
+
+    position: relative;
+
+    z-index: 3;
+
+    width: 270px;
+
+    height: 190px;
+
+    margin:
+        0 auto 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    animation:
+        rakhiFloat
+        4s
+        ease-in-out
+        infinite;
+}
+
+.promise-rakhi img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 12px 20px
+            rgba(50,10,40,0.35)
+        );
+}
+
+.promise-card h2 {
+
+    position: relative;
+
+    z-index: 3;
+
+    font-family:
+        "DM Serif Display",
+        serif;
+
+    font-size:
+        clamp(38px, 5vw, 55px);
+
+    font-weight: 400;
+}
+
+.promise-card p {
+
+    position: relative;
+
+    z-index: 3;
+
+    max-width: 650px;
+
+    margin:
+        25px auto 0;
+
+    font-size: 16px;
+
+    line-height: 2;
+
+    color:
+        rgba(255,255,255,0.94);
+}
+
+.promise-heart {
+
+    position: relative;
+
+    z-index: 3;
+
+    margin-top: 25px;
+
+    font-size: 30px;
+
+    animation:
+        heartBeat
+        1.5s
+        infinite;
+}
+
+
+/* =========================================================
+   FINAL SECTION
+========================================================= */
+
+.final-section {
+
+    padding:
+        140px 20px 80px;
+
+    text-align: center;
+}
+
+.final-decoration {
+
+    color: #dc6d9d;
+
+    font-size: 22px;
+
+    letter-spacing: 8px;
+
+    margin-bottom: 25px;
+}
+
+.final-section h2 {
+
+    font-family:
+        "DM Serif Display",
+        serif;
+
+    font-size:
+        clamp(45px, 7vw, 72px);
+
+    font-weight: 400;
+
+    line-height: 1.1;
+
+    color: #542a48;
+}
+
+.final-section > p {
+
+    max-width: 650px;
+
+    margin:
+        25px auto;
+
+    color: #76596c;
+
+    font-size: 16px;
+
+    line-height: 2;
+}
+
+.final-message {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    margin-top: 35px;
+
+    font-family:
+        "DM Serif Display",
+        serif;
+
+    font-size: 30px;
+
+    color: #d04b86;
+}
+
+.signature {
+
+    font-family:
+        "DM Serif Display",
+        serif;
+
+    font-size: 22px !important;
+
+    color: #684158 !important;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    position: relative;
+
+    z-index: 5;
+
+    padding:
+        35px 20px;
+
+    text-align: center;
+
+    background:
+        #542a48;
+
+    color:
+        rgba(255,255,255,0.8);
+
+    font-size: 13px;
+
+    line-height: 2;
+}
+
+.footer-rakhi {
+
+    font-size: 22px;
+
+    margin-bottom: 5px;
+}
+
+
+/* =========================================================
+   PARTY POPPERS
+========================================================= */
+
+.party-popper {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 9999;
+}
+
+.popper {
+
+    position: absolute;
+
+    bottom: -120px;
+
+    width: 65px;
+
+    height: 115px;
+
+    z-index: 10000;
+}
+
+.popper-left {
+
+    left: 20px;
+
+    transform:
+        rotate(-38deg);
+
+    animation:
+        popperLeft
+        0.8s
+        cubic-bezier(.2,.8,.3,1)
+        forwards;
+}
+
+.popper-right {
+
+    right: 20px;
+
+    transform:
+        rotate(38deg);
+
+    animation:
+        popperRight
+        0.8s
+        cubic-bezier(.2,.8,.3,1)
+        forwards;
+}
+
+.popper-body {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 12px;
+
+    width: 42px;
+
+    height: 85px;
+
+    border-radius:
+        8px 8px 20px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e83e72,
+            #a74ba5
+        );
+
+    box-shadow:
+        0 8px 20px
+        rgba(60,20,60,0.3);
+}
+
+.popper-body::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 6px;
+
+    right: 6px;
+
+    top: 18px;
+
+    height: 6px;
+
+    border-radius: 10px;
+
+    background:
+        #ffd166;
+
+    box-shadow:
+        0 20px 0 #ffd166,
+        0 40px 0 #ffd166;
+}
+
+.popper-opening {
+
+    position: absolute;
+
+    top: 8px;
+
+    left: 5px;
+
+    width: 56px;
+
+    height: 24px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #fff0a6,
+            #ff709d 40%,
+            #94499d 100%
+        );
+
+    box-shadow:
+        0 3px 8px
+        rgba(0,0,0,0.3);
+}
+
+@keyframes popperLeft {
+
+    0% {
+        bottom: -120px;
+    }
+
+    100% {
+        bottom: -15px;
+    }
+}
+
+@keyframes popperRight {
+
+    0% {
+        bottom: -120px;
+    }
+
+    100% {
+        bottom: -15px;
+    }
+}
+
+
+/* =========================================================
+   CONFETTI
+========================================================= */
+
+.confetti-container {
+
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+.confetti {
+
+    position: absolute;
+
+    opacity: 0;
+
+    animation:
+        confettiFly
+        2.2s
+        cubic-bezier(.15,.75,.3,1)
+        forwards;
+}
+
+@keyframes confettiFly {
+
+    0% {
+
+        opacity: 1;
+
+        transform:
+            translate(0, 0)
+            rotate(0deg)
+            scale(0.5);
+    }
+
+    30% {
+
+        opacity: 1;
+    }
+
+    70% {
+
+        opacity: 1;
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translate(
+                var(--confetti-x),
+                var(--confetti-y)
+            )
+            rotate(
+                var(--confetti-rotate)
+            )
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .bond-cards {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .memory-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================================
+   MOBILE — ANDROID + IPHONE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    body {
+
+        width: 100%;
+
+        overflow-x: hidden;
+    }
+
+
+    /* Navbar */
+
+    .navbar {
+
+        padding:
+            18px 18px;
+    }
+
+    .logo {
+
+        font-size: 14px;
+    }
+
+    .nav-rakhi {
+
+        font-size: 22px;
+    }
+
+
+    /* Hero */
+
+    .hero {
+
+        min-height: 100svh;
+
+        padding:
+            90px 18px 35px;
+    }
+
+
+    .hero::before {
+
+        width: 330px;
+
+        height: 330px;
+
+        top: -160px;
+
+        right: -160px;
+    }
+
+    .hero::after {
+
+        width: 250px;
+
+        height: 250px;
+
+        bottom: -130px;
+
+        left: -120px;
+    }
+
+
+    /* Decorations */
+
+    .top-decoration {
+
+        margin-bottom: 18px;
+
+        font-size: 12px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .small-heading {
+
+        margin-bottom: 14px;
+
+        font-size: 9px;
+
+        letter-spacing: 2.5px;
+    }
+
+
+    /* Main heading */
+
+    .hero h1 {
+
+        font-size:
+            clamp(52px, 17vw, 72px);
+
+        line-height: 0.92;
+    }
+
+    .hero h1 span {
+
+        margin-top: 8px;
+    }
+
+
+    /* Rakhi */
+
+    .rakhi-icon {
+
+        width:
+            min(245px, 72vw);
+
+        height:
+            min(180px, 48vw);
+
+        margin:
+            18px auto 8px;
+    }
+
+
+    /* Sister heading */
+
+    .hero h2 {
+
+        font-size:
+            clamp(25px, 7.5vw, 34px);
+
+        margin:
+            7px auto 15px;
+    }
+
+
+    /* Description */
+
+    .hero-description {
+
+        width: 100%;
+
+        max-width: 360px;
+
+        font-size: 13px;
+
+        line-height: 1.7;
+    }
+
+    .special-line {
+
+        margin-top: 15px;
+    }
+
+
+    /* Button */
+
+    .surprise-button {
+
+        width:
+            min(300px, 90vw);
+
+        min-height: 53px;
+
+        margin-top: 22px;
+
+        padding:
+            14px 20px;
+
+        font-size: 14px;
+    }
+
+
+    /* Floating decorations */
+
+    .floating-elements span {
+
+        font-size: 19px;
+
+        opacity: 0.35;
+    }
+
+
+    /* =====================================================
+       SECOND PAGE MOBILE
+    ===================================================== */
+
+    .surprise-section {
+
+        padding:
+            110px 15px 60px;
+    }
+
+
+    .section-heading {
+
+        margin-bottom: 40px;
+    }
+
+
+    .section-heading h1,
+    .section-heading h2 {
+
+        font-size:
+            42px;
+
+        line-height: 1.08;
+    }
+
+
+    .section-description {
+
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+
+    /* Letter */
+
+    .letter-card {
+
+        padding:
+            50px 25px;
+
+        border-radius: 24px;
+    }
+
+
+    .letter-content {
+
+        font-size: 18px;
+
+        line-height: 1.9;
+    }
+
+
+    .letter-decoration {
+
+        font-size: 24px;
+    }
+
+
+    .special-message {
+
+        font-size: 15px;
+
+        gap: 10px;
+    }
+
+
+    /* Bond cards */
+
+    .bond-section {
+
+        margin-top: 80px;
+    }
+
+
+    .bond-cards {
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+
+    .bond-card {
+
+        padding:
+            30px 22px;
+    }
+
+
+    /* Memories */
+
+    .memory-section {
+
+        margin-top: 80px;
+    }
+
+
+    .memory-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+
+    .memory-photo,
+    .memory-photo:nth-child(2),
+    .memory-photo:nth-child(3) {
+
+        transform:
+            rotate(0deg);
+    }
+
+
+    .photo-frame {
+
+        height: 300px;
+    }
+
+
+    /* Promise */
+
+    .promise-section {
+
+        margin-top: 80px;
+    }
+
+
+    .promise-card {
+
+        padding:
+            50px 25px;
+
+        border-radius: 28px;
+    }
+
+
+    .promise-rakhi {
+
+        width: 230px;
+
+        height: 170px;
+    }
+
+
+    .promise-card h2 {
+
+        font-size:
+            40px;
+    }
+
+
+    .promise-card p {
+
+        font-size: 14px;
+
+        line-height: 1.9;
+    }
+
+
+    /* Final */
+
+    .final-section {
+
+        padding:
+            100px 15px 60px;
+    }
+
+
+    .final-section h2 {
+
+        font-size:
+            48px;
+    }
+
+
+    .final-message {
+
+        font-size:
+            24px;
+
+        gap: 10px;
+    }
+
+
+    /* Party poppers */
+
+    .popper-left {
+
+        left: -10px;
+    }
+
+    .popper-right {
+
+        right: -10px;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .hero {
+
+        padding:
+            85px 14px 25px;
+    }
+
+
+    .navbar {
+
+        padding:
+            16px 14px;
+    }
+
+
+    .logo {
+
+        font-size: 13px;
+    }
+
+
+    .nav-rakhi {
+
+        font-size: 20px;
+    }
+
+
+    .top-decoration {
+
+        font-size: 10px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .small-heading {
+
+        font-size: 8px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            50px;
+    }
+
+
+    .rakhi-icon {
+
+        width: 210px;
+
+        height: 155px;
+    }
+
+
+    .hero h2 {
+
+        font-size:
+            25px;
+    }
+
+
+    .hero-description {
+
+        font-size:
+            12px;
+    }
+
+
+    .surprise-button {
+
+        width: 90%;
+
+        font-size:
+            13px;
+    }
+
+
+    .section-heading h1,
+    .section-heading h2 {
+
+        font-size:
+            36px;
+    }
+
+
+    .letter-card {
+
+        padding:
+            45px 20px;
+    }
+
+
+    .letter-content {
+
+        font-size:
+            17px;
+    }
+
+
+    .photo-frame {
+
+        height:
+            260px;
+    }
+
+
+    .promise-rakhi {
+
+        width:
+            210px;
+
+        height:
+            155px;
+    }
+}
+
+
+/* =========================================================
+   LANDSCAPE PHONE
+========================================================= */
+
+@media (max-height: 600px)
+and (orientation: landscape) {
+
+    .hero {
+
+        min-height:
+            100svh;
+
+        padding:
+            70px 25px 25px;
+    }
+
+
+    .navbar {
+
+        padding:
+            12px 25px;
+    }
+
+
+    .top-decoration {
+
+        margin-bottom:
+            8px;
+    }
+
+
+    .small-heading {
+
+        margin-bottom:
+            8px;
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            clamp(40px, 9vw, 65px);
+    }
+
+
+    .rakhi-icon {
+
+        width:
+            170px;
+
+        height:
+            110px;
+
+        margin:
+            8px auto 3px;
+    }
+
+
+    .hero h2 {
+
+        font-size:
+            24px;
+
+        margin:
+            4px auto 8px;
+    }
+
+
+    .hero-description {
+
+        font-size:
+            12px;
+
+        line-height:
+            1.5;
+    }
+
+
+    .surprise-button {
+
+        min-height:
+            45px;
+
+        margin-top:
+            12px;
+
+        padding:
+            10px 20px;
+
+        font-size:
+            13px;
+    }
+}
+
+
+/* =========================================================
+   IPHONE SAFE AREA
+========================================================= */
+
+@supports (padding: env(safe-area-inset-bottom)) {
+
+    .hero {
+
+        padding-bottom:
+            calc(
+                35px +
+                env(safe-area-inset-bottom)
+            );
+    }
+
+
+    .navbar {
+
+        padding-left:
+            max(
+                18px,
+                env(safe-area-inset-left)
+            );
+
+        padding-right:
+            max(
+                18px,
+                env(safe-area-inset-right)
+            );
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        scroll-behavior:
+            auto !important;
+    }
+}
+/* =====================================================
+   MUSIC BUTTON
+===================================================== */
+
+.music-button {
+    position: fixed;
+
+    right: 22px;
+    bottom: 22px;
+
+    width: 52px;
+    height: 52px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    color: #d44f8c;
+
+    font-size: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    z-index: 99999;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.2);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.music-button:hover {
+    transform: scale(1.1);
+
+    box-shadow:
+        0 12px 30px
+        rgba(0, 0, 0, 0.25);
+}
+
+.music-button.playing {
+    animation:
+        musicPulse
+        1.5s
+        ease-in-out
+        infinite;
+}
+
+@keyframes musicPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .music-button {
+        right: 16px;
+        bottom: 16px;
+
+        width: 48px;
+        height: 48px;
+
+        font-size: 20px;
+    }
+}
