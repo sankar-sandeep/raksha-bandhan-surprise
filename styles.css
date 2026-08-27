@@ -190,6 +190,18 @@ img {
     white-space: nowrap;
 }
 
+.logi{
+    font-size:
+        clamp(15px, 1.5vw, 20px);
+
+    font-weight: 600;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    white-space: nowrap;
+    color: black;
+    
+}
+
 .nav-rakhi {
     font-size: 26px;
 
